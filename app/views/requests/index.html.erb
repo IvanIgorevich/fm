@@ -1,14 +1,31 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Requests</h1>
+<div class="column-1-2 text-center">
 
-<div id="requests">
-  <% @requests.each do |request| %>
-    <%= render request %>
-    <p>
-      <%= link_to "Show this request", request %>
-    </p>
+  <%= form_with model: @request do |form| %>
+    <div class="buffer-both-large">
+      <%= form.text_area :body, id: 'body' %>
+    </div>
+
+    <div class="buffer-both-large">
+      <%= form.submit 'запрос', class: 'button', id:'butt'  %>
+    </div>
   <% end %>
 </div>
 
-<%= link_to "New request", new_request_path %>
+<div class="column-1-2 text-center">
+  <div class="buffer-both-large">
+    <div><span id="count"><%= @requests_count %></span> запросов</div>
+
+  </div>
+
+  <div class="created_at">
+    <% @requests.each do |request| %>
+
+      <ul>
+        <li><%= request.created_at %></li>
+      </ul>
+
+    <% end %>
+  </div>
+</div>

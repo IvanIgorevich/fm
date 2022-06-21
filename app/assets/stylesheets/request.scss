@@ -1,0 +1,53 @@
+body {
+  font-family: “Trebuchet MS”, sans-serif;
+  color: #444;
+  font-size: 16px;
+}
+
+.container {
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 3px;
+  font-size: 16px;
+  text-decoration: none;
+  padding: 15px 30px;
+  text-shadow: 2px 1px 1px rgba(0, 0, 0, 0.15);
+  font-weight: bold;
+  background: #59a3fc;
+  color: #fff;
+}
+
+.column-1-2 {
+  width: 50%;
+  float: left;
+}
+
+.buffer-both-large {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.created_at {
+  width: 100%;
+  max-height: 300px;
+  background: #fff;
+  border: 1px solid #C1C1C1;
+  overflow-y: scroll;
+}
+
+input, textarea {
+  width: 249px;
+}
+
+textarea {
+  height: 100px;
+}

@@ -4,6 +4,8 @@ class RequestsController < ApplicationController
   # GET /requests or /requests.json
   def index
     @requests = Request.all
+    @request = Request.new
+    @requests_count = Request.count
   end
 
   # GET /requests/1 or /requests/1.json
@@ -12,7 +14,7 @@ class RequestsController < ApplicationController
 
   # GET /requests/new
   def new
-    @request = Request.new
+
   end
 
   # GET /requests/1/edit
@@ -25,10 +27,10 @@ class RequestsController < ApplicationController
 
     respond_to do |format|
       if @request.save
-        format.html { redirect_to request_url(@request), notice: "Request was successfully created." }
+        format.html { redirect_to root_path }
         format.json { render :show, status: :created, location: @request }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { redirect_to root_path, status: :unprocessable_entity }
         format.json { render json: @request.errors, status: :unprocessable_entity }
       end
     end
