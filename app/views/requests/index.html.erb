@@ -15,7 +15,9 @@
 
 <div class="column-1-2 text-center">
   <div class="buffer-both-large">
-    <div><span id="count"><%= @requests_count %></span> запросов</div>
+    <div class="title-large" id="count">
+      <%= "#{@requests_count} #{inclination(@requests_count, "запрос", "запроса", "запросов")}" %>
+    </div>
 
   </div>
 
