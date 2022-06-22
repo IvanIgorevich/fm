@@ -8,19 +8,6 @@ class RequestsController < ApplicationController
     @requests_count = Request.count
   end
 
-  # GET /requests/1 or /requests/1.json
-  def show
-  end
-
-  # GET /requests/new
-  def new
-
-  end
-
-  # GET /requests/1/edit
-  def edit
-  end
-
   # POST /requests or /requests.json
   def create
     @request = Request.new(request_params)
@@ -28,34 +15,9 @@ class RequestsController < ApplicationController
     respond_to do |format|
       if @request.save
         format.html { redirect_to root_path }
-        format.json { render :show, status: :created, location: @request }
-      else
+       else
         format.html { redirect_to root_path, status: :unprocessable_entity }
-        format.json { render json: @request.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /requests/1 or /requests/1.json
-  def update
-    respond_to do |format|
-      if @request.update(request_params)
-        format.html { redirect_to request_url(@request), notice: "Request was successfully updated." }
-        format.json { render :show, status: :ok, location: @request }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @request.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /requests/1 or /requests/1.json
-  def destroy
-    @request.destroy
-
-    respond_to do |format|
-      format.html { redirect_to requests_url, notice: "Request was successfully destroyed." }
-      format.json { head :no_content }
+       end
     end
   end
 
